@@ -48,7 +48,7 @@ function Header() {
       }}
     >
       <Typography variant="h6" sx={{ my: 2, fontWeight: 'bold' }}>
-        Your <Box component="span" sx={{ color: '#3b82f6' }}>Name</Box>
+        Vamsi <Box component="span" sx={{ color: '#3b82f6' }}>Allam</Box>
       </Typography>
       <List>
         {navItems.map((item) => (
