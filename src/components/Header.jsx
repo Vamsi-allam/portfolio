@@ -146,7 +146,7 @@ function Header() {
                   textShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)'
                 }}
               >
-                Vamsi Kumar <Box component="span" sx={{ color: '#3b82f6' }}>Allam</Box>
+                Vamsi <Box component="span" sx={{ color: '#3b82f6' }}>Allam</Box>
               </Typography>
             </Box>
 
