@@ -17,7 +17,8 @@ function Education() {
       location: "Mangalari, Andhara Pradesh, India",
       duration: "2021 - 2025",
       description: "Studied key computer science concepts including algorithms, data structures, and software engineering. Completed coursework in Full Stack development, databases, and Cyber Security.",
-      skills: ["Java", "React", "Web Development", "MySql", "Git","Github","Spring Boot"]
+      skills: ["Java", "React", "Web Development", "MySql", "Git","Github","Spring Boot"],
+      cgpa: "7.89/10.0"
     },
     {
       id: 2,
@@ -26,7 +27,8 @@ function Education() {
       location: "Rajamahendravaram, Andhara Pradesh, India",
       duration: "2018 - 2020",
       description: "Focused on Mathematics, Physics, and Chemistry. Developed a strong foundation in analytical thinking and problem-solving skills. Participated in coding competitions.",
-      skills: ["C Fundamentals"]
+      skills: ["C Fundamentals"],
+      cgpa: "9.34/10.0"
     },
     {
       id: 3,
@@ -36,6 +38,7 @@ function Education() {
       duration: "2017-2018",
       description: "Completed secondary education with a focus on Science and Mathematics. Developed foundational skills in programming and logical reasoning.",
       // skills: ["Figma", "User Testing", "Wireframing", "Prototyping", "Design Systems"]
+      cgpa: "9.8/10.0"
     }
   ];
 
@@ -128,9 +131,24 @@ function Education() {
                     {item.institution}
                   </Typography>
                   
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
                     {item.location}
                   </Typography>
+                  
+                  {item.cgpa && (
+                    <Typography variant="body2" sx={{ 
+                      mb: 1, 
+                      color: 'primary.light', 
+                      fontWeight: 500,
+                      display: 'inline-block',
+                      bgcolor: 'rgba(255, 77, 77, 0.08)',
+                      px: 1.5,
+                      py: 0.5,
+                      borderRadius: 1
+                    }}>
+                      CGPA: {item.cgpa}
+                    </Typography>
+                  )}
                   
                   <Typography variant="body1" sx={{ mb: 2, color: 'text.primary' }}>
                     {item.description}
@@ -144,7 +162,8 @@ function Education() {
                         size="small"
                         sx={{ 
                           bgcolor: 'rgba(59, 130, 246, 0.1)',
-                          color: '#3b82f6' 
+                          color: '#3b82f6',
+                          '&::before': { display: 'none' }
                         }}
                       />
                     ))}

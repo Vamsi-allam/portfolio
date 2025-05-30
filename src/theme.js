@@ -89,6 +89,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiCssBaseline: {
+      styleOverrides: `
+        html {
+          scroll-behavior: smooth;
+        }
+      `,
+    },
   },
   shadows: shadows, // Apply our custom shadows array
 });

@@ -93,22 +93,22 @@ function Skills() {
             }}>
               {/* First Column */}
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
-                <SkillItem icon={customIcons.java} name="Java" level={80} />
-                <SkillItem icon={customIcons.react} name="React" level={80} />
-                <SkillItem icon={customIcons.spring} name="Spring Boot" level={80} />
-                <SkillItem icon={customIcons.flutter} name="Flutter" level={40} />
-                <SkillItem icon={customIcons.git} name="Git" level={88} />
-                <SkillItem icon={customIcons.mysql} name="MySQL" level={80} />
+                <SkillItem icon={customIcons.java} name="Java" />
+                <SkillItem icon={customIcons.react} name="React" />
+                <SkillItem icon={customIcons.spring} name="Spring Boot" />
+                <SkillItem icon={customIcons.flutter} name="Flutter" />
+                <SkillItem icon={customIcons.git} name="Git" />
+                <SkillItem icon={customIcons.mysql} name="MySQL" />
               </Box>
               
               {/* Second Column */}
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
-                <SkillItem icon={customIcons.azure} name="Azure IoT" level={80} />
-                <SkillItem icon={customIcons.restapi} name="RESTful APIs" level={80} />
-                <SkillItem icon={customIcons.javascript} name="JavaScript" level={60} />
-                <SkillItem icon={customIcons.github} name="GitHub" level={85} />
-                <SkillItem icon={customIcons.materialui} name="Material UI" level={85} />
-                <SkillItem icon={customIcons.html5} name="HTML5/CSS3" level={80} />
+                <SkillItem icon={customIcons.azure} name="Azure IoT" />
+                <SkillItem icon={customIcons.restapi} name="RESTful APIs" />
+                <SkillItem icon={customIcons.javascript} name="JavaScript" />
+                <SkillItem icon={customIcons.github} name="GitHub" />
+                <SkillItem icon={customIcons.materialui} name="Material UI" />
+                <SkillItem icon={customIcons.html5} name="HTML5/CSS3" />
               </Box>
             </Box>
           </CardContent>
@@ -119,10 +119,7 @@ function Skills() {
 }
 
 // Custom skill item component with star rating
-function SkillItem({ icon, name, level }) {
-  // Convert percentage to 5-star rating
-  const starRating = (level / 100) * 5;
-  
+function SkillItem({ icon, name }) {
   return (
     <Box
       sx={{
@@ -176,20 +173,6 @@ function SkillItem({ icon, name, level }) {
         >
           {name}
         </Typography>
-        <Box sx={{ display: 'flex' }}>
-          {[...Array(5)].map((_, index) => {
-            if (index < Math.floor(starRating)) {
-              // Full star
-              return <StarIcon key={index} sx={{ color: 'primary.main', fontSize: '1.2rem' }} />;
-            } else if (index < Math.ceil(starRating) && !Number.isInteger(starRating)) {
-              // Half star
-              return <StarHalfIcon key={index} sx={{ color: 'primary.main', fontSize: '1.2rem' }} />;
-            } else {
-              // Empty star
-              return <StarBorderIcon key={index} sx={{ color: 'primary.main', fontSize: '1.2rem' }} />;
-            }
-          })}
-        </Box>
       </Box>
     </Box>
   );

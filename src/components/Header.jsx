@@ -36,6 +36,47 @@ function Header() {
     setDrawerOpen(!drawerOpen);
   };
 
+  const handleScrollToSection = (sectionId) => (event) => {
+    event.preventDefault();
+    
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Close mobile menu if open
+      if (drawerOpen) {
+        setDrawerOpen(false);
+      }
+      
+      // Smooth scroll to the section
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+      
+      // Update URL without reloading the page (optional)
+      window.history.pushState(null, '', `#${sectionId}`);
+    }
+  };
+
+  const handleNavLinkClick = (event, targetId) => {
+    if (!targetId) return;
+    
+    event.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      // Handle mobile menu closing if it exists
+      if (drawerOpen) {
+        setDrawerOpen(false);
+      }
+      
+      // Smooth scroll to the target element
+      targetElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   const drawer = (
     <Box 
       onClick={handleDrawerToggle} 
@@ -66,7 +107,7 @@ function Header() {
                   }
                 }
               }} 
-              href={item.href}
+              onClick={handleScrollToSection(item.href.substring(1))}
             >
               <ListItemText 
                 primary={item.name} 
@@ -142,7 +183,7 @@ function Header() {
                   <Button 
                     key={item.name} 
                     color="inherit" 
-                    href={item.href}
+                    onClick={handleScrollToSection(item.href.substring(1))}
                     sx={{ 
                       textTransform: 'none',
                       fontSize: '1rem',
