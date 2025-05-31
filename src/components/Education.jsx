@@ -14,7 +14,7 @@ function Education() {
       id: 1,
       degree: "Bachelor of Technology in Computer Science",
       institution: "SRM University",
-      location: "Mangalari, Andhara Pradesh, India",
+      location: "Mangalagiri, Andhara Pradesh, India",
       duration: "2021 - 2025",
       description: "Studied key computer science concepts including algorithms, data structures, and software engineering. Completed coursework in Full Stack development, databases, and Cyber Security.",
       skills: ["Java", "React", "Web Development", "MySql", "Git","Github","Spring Boot"],
